@@ -16,9 +16,9 @@ jobs:
     - name: Set up SSH agent
       uses: webfactory/ssh-agent@v0.5.3
       with:
-        ssh-private-key: ${{ secrets.GCP_SSH_KEY }}
+        ssh-private-key: ${{ secrets.VMSSH }}
 
     - name: Deploy to GCP VM
       run: |
         ssh -o StrictHostKeyChecking=no prathmesh@34.47.140.225 "
-          sudo systemctl restart nginx && echo 'NGINX restarted on GCP VM'"
+          sudo systemctl restart nginx && echo 'NGINX  restarted on GCP VM'"
